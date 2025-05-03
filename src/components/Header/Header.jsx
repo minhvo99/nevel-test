@@ -41,7 +41,7 @@ const Header = () => {
               </div>
             </div>
             <div className='header__menu__logo'>
-              <div className='header__menu__logo'>
+              <div className='header__menu__logo__item'>
                 <Icon icon='logo' />
               </div>
               <div className='header__menu__left' ref={menuLeft}>
