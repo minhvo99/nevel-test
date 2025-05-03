@@ -1,0 +1,46 @@
+@use '../../scss/variables' as vars;
+@use '../../scss/mixins' as mixins;
+
+.menu-bar {
+  background-color: vars.$menu-bar-color;
+  @include mixins.flex(center, space-evenly);
+  overflow: hidden;
+  padding: 0.5rem 0;
+
+  &__item {
+    padding: 0.5rem 1.125rem;
+    @include mixins.flex(center, center);
+    flex-direction: column;
+
+    @include mixins.tablet {
+      padding: 0.5rem;
+    }
+    @include mixins.mobile {
+      padding: 0.5rem;
+    }
+
+    &__label {
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: vars.$txt-white;
+      text-align: center;
+      margin-top: 1.25rem;
+
+      @include mixins.tablet {
+        font-size: 10px;
+      }
+      @include mixins.mobile {
+        font-size: 10px;
+      }
+    }
+  }
+  @include mixins.tablet {
+    @include mixins.flex(center, space-around);
+    padding: 0;
+  }
+  @include mixins.mobile {
+    @include mixins.flex(center, space-around);
+    padding: 0;
+  }
+}

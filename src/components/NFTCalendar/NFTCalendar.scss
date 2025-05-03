@@ -1,0 +1,83 @@
+@use '../../scss/variables' as vars;
+@use '../../scss/mixins' as mixins;
+
+.nft-calendar {
+  background-color: vars.$main-bg;
+  .nft-content {
+    @include mixins.flex(center, flex-start);
+    flex-wrap: wrap;
+    padding: 6rem 0 3rem 0;
+    gap: 3rem;
+
+    @include mixins.tablet {
+      padding-top: 0;
+    }
+    @include mixins.mobile {
+      padding-top: 0;
+    }
+
+    &__left {
+      &__actions {
+        @include mixins.flex(center, space-between);
+        padding: 1rem 0;
+
+        &__title {
+          font-weight: 900;
+          font-style: oblique;
+          font-size: 2rem;
+          text-transform: uppercase;
+          color: vars.$txt-yellow;
+
+          @include mixins.tablet {
+            font-size: 1.5rem;
+          }
+          @include mixins.mobile {
+            font-size: 1.5rem;
+          }
+        }
+
+        @include mixins.tablet {
+          padding-top: 4rem;
+          padding-bottom: 0.5rem;
+        }
+        @include mixins.mobile {
+          padding-top: 2rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+    &__right {
+      @include mixins.flex(center, space-between);
+      gap: 1rem;
+
+      &__hot,
+      &__promotion {
+        padding: 0 1rem;
+        .title {
+          font-weight: 900;
+          font-style: oblique;
+          font-size: 2rem;
+          text-transform: uppercase;
+          color: vars.$txt-yellow;
+          padding: 1.5rem 0;
+
+          @include mixins.tablet {
+            font-size: 1.5rem;
+          }
+          @include mixins.mobile {
+            font-size: 1.5rem;
+          }
+        }
+
+        @include mixins.tablet {
+          padding: 0;
+          gap: 1rem;
+        }
+        @include mixins.mobile {
+          padding: 0;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

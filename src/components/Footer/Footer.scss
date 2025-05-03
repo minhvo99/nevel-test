@@ -1,0 +1,43 @@
+@use '../../scss/mixins' as mixins;
+@use '../../scss/variables' as vars;
+.footer {
+  background-color: vars.$main-bg;
+  border-top: 1px solid vars.$background-gray;
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    &__row {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+      margin-bottom: 1rem;
+
+      @include mixins.tablet {
+        flex: 25%;
+        max-width: 100%;
+      }
+      @include mixins.mobile {
+        flex: 50%;
+        max-width: 100%;
+      }
+
+      &__title {
+        font-size: 1.125rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        font-style: italic;
+        line-height: 1.75rem;
+        text-transform: uppercase;
+        color: vars.$txt-white;
+
+        &__text {
+          font-weight: 400;
+          color: vars.$txt-white;
+          line-height: 1.75rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
