@@ -1,6 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Button from '../Button/Button';
 import './NFTCollection.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const items = [
   'Rectangle-0.png',
   'Rectangle-1.png',
@@ -35,9 +38,16 @@ const NFTCollection = () => {
       }
     }
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+      delay: 100,
+    });
+  }, []);
   return (
     <div className='collection container'>
-      <div className='row'>
+      <div className='row' data-aos='fade-up'>
         <div className='collection-actions'>
           <h1 className='collection-actions__title'>new nft collections</h1>
           <div className='collection-actions__btns'>
