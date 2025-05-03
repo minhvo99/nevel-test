@@ -23,7 +23,7 @@ const Header = () => {
     menuLeft.current.classList.toggle('active');
     if (action === 'hideBars') {
       barsIconRef.current.classList.add('hidden');
-    } else if (action === 'showBars') {
+    } else if (action === 'showBars' || action === 'menuItemClick') {
       barsIconRef.current.classList.remove('hidden');
     }
   };
@@ -57,7 +57,7 @@ const Header = () => {
                     className={`header__menu__item header__menu__left__item ${
                       index === activeNav ? 'active' : ''
                     }`}
-                    onClick={menuToggle}
+                    onClick={() => menuToggle('menuItemClick')}
                   >
                     <Link to={item.path}>
                       <span>{item.name}</span>
